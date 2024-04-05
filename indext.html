@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prayer Department</title>
+  <link rel="stylesheet" href="Styles.css">
+  <script src="https://kit.fontawesome.com/c5c8c29699.js" crossorigin="anonymous"></script>
+
+</head>
+<body>
+  <img class = "logo"src="selihom.jpg"/><h1 class="topic">Arbaminch University Selihom Prayer Department</h1>
+  
+  <div id="portfolio">
+    <div class="container">
+      <h1 class="sub-title2">Prayer Department</h1>
+      <div class="work-list">
+        <div class="work">
+          <img src="prayer.jpg">
+          <div class="layer">
+            <h3>Programs we have</h3>
+            <li>Devotion Morning prayer from 5:30am-7:00am</li>
+            <sub>Monday</sub>
+            <sub>Tuesday</sub>
+            <sub>Wednesday</sub>
+            <li>General Prayer on Friday 6:00pm-7:30pm</li>
+            <li>Walking Prayer</li>
+          </div>
+        </div>
+        <div class="work">
+          <img src="prayer2.jpg">
+          <div class="layer">
+            <h3>Philia with JESUS</h3>
+            <p> Job said,"I have heard</p>
+            <p> of thee by the hearing of</p> 
+            <p>the ear</p>
+            <p>but now mine eye seeth thee."</p>
+            <p>Job 42:5</p>
+          </div>
+        </div>
+        <div class="work">
+          <img src="prayer4.jpg">
+          <div class="layer">
+            <h3>Need for Prayer Or More info?</h3>
+            <p>write your message, the current</p> 
+            <p>leaders of prayer will reach you!</p>
+            <P>Contact Us </P>
+            <p>+25192164432</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="form">
+      <form name="submit-to-google-sheet" action="https://script.google.com/macros/s/AKfycbwrf1s6OwMwkt2rLXExeq9J9jM50xK6b23RCJ0tAiAEXLe7y9K9GpKZGwU_lpSq9vcSrg/exec" method="POST">
+        <div class="profile-pic-container slide-in">
+          <label>Prayer Department Form</label>
+        </div>
+        <div class="Form1">
+        <input type="text" name="Name" placeholder="Name" class="text-input slide-in">
+        <input type="number" name="Number" placeholder="Phone number" class="text-input slide-in">
+        <input type="text" name="Department" placeholder="Your fellow and Academic Department"  class="text-input slide-in">
+        <label for="countries" class="slide-in">Choose your preferred date:</label>
+        <select id="countries" name="Day" class="text-input slide-in">
+          <option value="monday">Monday</option>
+          <option value="tuesday">Tuesday</option>
+          <option value="wednesday">Wednesday</option>
+        </select>
+        <label for="family-members" class="slide-in">Your batch:</label>
+        <input type="number" id="family-members" name="Batch" class="text-input slide-in">
+        <label for="status" class="slide-in">Message:</label>
+        <textarea id="status" name="Status" placeholder="Write your message here" class="textarea-input slide-in"></textarea>
+        <input type="submit" class="btn btn2" value="Submit">
+        </div>
+      </form>
+    </div>
+    
+  </div>
+  <div class="contact-left">
+    <h1 class = "sub-title">Join Us on Social Media</h1>
+    
+    <div class = "social-icons">
+      <a href="https://instagram.com/selihomprayers?igshid=NGVhN2U2NjQ0Yg=="><i class="fa-brands fa-instagram"></i></a>
+      <a href="https://www.tiktok.com/@selihomprayers?_t=8gPsdBSC41H&_r=1"><i class="fa-brands fa-tiktok"></i></a>
+      <a href="https://www.facebook.com/profile.php?id=61552304366351&mibextid=ZbWKwL"><i class="fa-brands fa-square-facebook"></i></a>
+      <a href="https://t.me/c/1452396998/242"><i class="fa-brands fa-telegram"></i></a>
+      <a href="https://www.youtube.com/@amuecsf"><i class="fa-brands fa-youtube"></i></a>
+    </div>
+
+    
+  </div>
+
+  <div id="msg"></div>
+
+  <div class="advertisement">
+    <p>Looking for a skilled React developer for your website? Contact Firaol Terefe, an expert in React,web developer and app developer. Visit here  ~ <a class = "link" href ="https://firaoldev.web.app/"> firaoldev.web.app </a> ~  to learn more and discuss your project. Elevate your website with a React expert!
+  </div>
+
+  <div class="copyright">
+    <p>© Firaol Terefe. All rights reserved.</p>
+  </div>
+  
+
+  <script>
+    
+const form = document.forms['submit-to-google-sheet'];
+const msg = document.getElementById("msg");
+
+form.addEventListener('submit', e => {
+  e.preventDefault();
+  const formData = new FormData(form);
+  const url = form.getAttribute('action');
+
+  fetch(url, {
+    method: 'post',
+    body: formData
+  })
+  .then(response => {
+    msg.innerHTML = "<span style='font-size: 24px; color: green;text-align: center; display: block;'>Message sent successfully!";
+    setTimeout(function() {
+      msg.innerHTML = "";
+    }, 5000);
+    form.reset();
+  })
+  .catch(error => console.error('Error!', error.message));
+});
+
+
+  </script>
+</body>
+</html>
